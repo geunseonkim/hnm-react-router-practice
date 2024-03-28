@@ -10,6 +10,7 @@
 .nav-section {
     display: flex;
     justify-content: center;
+    cursor: pointer;
 }
 .menu-list {
     display: flex;

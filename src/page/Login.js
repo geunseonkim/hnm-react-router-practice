@@ -8,7 +8,7 @@ const Login = ({setAuthenticate}) => {
   const navigate = useNavigate();
   const loginUser = (event) => {
     event.preventDefault();
-    //console.log("login")
+    console.log("로그인")
     setAuthenticate(true);
     navigate("/");
   }
