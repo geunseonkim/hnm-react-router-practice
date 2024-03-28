@@ -37,3 +37,7 @@
 .product-card:hover {
     transform: scale(1.1);
 }
+.product-img {
+    display: flex;
+    justify-content: flex-end;
+}
