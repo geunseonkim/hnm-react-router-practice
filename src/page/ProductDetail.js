@@ -9,7 +9,7 @@ const ProductDetail = () => {
   let{id} = useParams();
   const [product, setProduct] = useState(null) // 3. api data를 state에 저장!
   const getProductDetail = async() => {
-    let url = ` http://localhost:4000/products/${id}` // 1. 이 id 숫자를 읽어서 json 서버에 보내준다. -> useParams
+    let url = `https://my-json-server.typicode.com/geunseonkim/hnm-react-router-practice/products/${id}` // 1. 이 id 숫자를 읽어서 json 서버에 보내준다. -> useParams
     let response = await fetch(url)
     let data = await response.json();
     console.log("ddd",data); // 2. data를 확인했으면 이제 UI에 보여주면 된다!
