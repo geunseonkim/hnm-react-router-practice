@@ -9,10 +9,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import PrivateRoute from './route/PrivateRoute'
 
 function App() {
-  const[authenticate, setAuthenticate] = useState(false) // true: login success
+  const [authenticate, setAuthenticate] = useState(false) // true: login success
   useEffect(() => {
     //console.log("aaa", authenticate);
   }, [authenticate])
+
   return ( 
     <div >
       <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate}/>

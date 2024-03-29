@@ -19,10 +19,10 @@ const ProductAll = () => {
     getProducts()
   },[query])
   return (
-    <div>
+    <div className="body-font">
       <Container>
         <Row>
-          {productList.map((menu) => (<Col lg={3}><ProductCard item={menu}/></Col>))}
+          {productList.map((menu, idx) => (<Col lg={3} key={idx} className='productCard'><ProductCard item={menu}/></Col>))}
         </Row>
       </Container>
       <ProductCard/>

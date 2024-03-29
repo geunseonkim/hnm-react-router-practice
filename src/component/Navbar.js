@@ -1,11 +1,14 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons'
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import CloseButton from 'react-bootstrap/CloseButton';
 
 const Navbar = ({authenticate, setAuthenticate}) => {
     const menuList = ['여성', 'Divided', "남성", "신생아/유아", "아동", "H$M Home", "Sale", "지속가능성",];
+    const [width, setWidth] = useState(0);
     const navigate = useNavigate();
     const goToLogin = () => {
       navigate("/login");
@@ -33,23 +36,35 @@ const Navbar = ({authenticate, setAuthenticate}) => {
     }
   return (
     <div>
-      {/* 유저가 로그인을 하면 '로그아웃'이 보이게, 로그아웃을 하면 '로그인'을 볼 수 있다. */}
-      {authenticate == false ? (
-      <div className="login-button" onClick={goToLogin}>
-        <FontAwesomeIcon icon = {faUser}/>
-        <div>로그인</div>
-      </div>) : (
-      <div className="login-button" onClick={goToLogin}>
-        <FontAwesomeIcon icon = {faUser}/>
-        <div>로그아웃</div>
-      </div>) }
-      
+      <div className='side-menu' style={{width: width}}>
+      <button className="closebtn" onClick={() => setWidth(0)}>&times;</button>
+        <div className="side-menu-list">
+          {menuList.map((menu,idx)=>(<button key={idx}>{menu}</button>))}
+        </div>
+      </div>
+
+      <div className="nav-area">
+        <div className="NavLogo">
+          <FontAwesomeIcon icon={faBars} onClick={()=>setWidth(250)}/>
+        </div>
+        {/* 유저가 로그인을 하면 '로그아웃'이 보이게, 로그아웃을 하면 '로그인'을 볼 수 있다. */}
+        {authenticate == false ? (
+        <div className="login-button" onClick={goToLogin}>
+          <FontAwesomeIcon icon = {faUser}/>
+          <div>로그인</div>
+        </div>) : (
+        <div className="login-button" onClick={goToLogin}>
+          <FontAwesomeIcon icon = {faUser}/>
+          <div>로그아웃</div>
+        </div>) }
+      </div>
+
       <div className="nav-section" onClick={goToMain}>
         <img width={100} src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/H%26M-Logo.svg/1200px-H%26M-Logo.svg.png"/>
       </div>
       <div className="menu-area">
         <ul className="menu-list">
-            {menuList.map((menu, idx)=>(<li>{menu}</li>))}
+            {menuList.map((menu, idx)=>(<li key={idx}>{menu}</li>))}
         </ul>
         <div className="search-area">
             <FontAwesomeIcon icon={faSearch}/>
