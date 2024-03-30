@@ -23,7 +23,7 @@ const ProductDetail = () => {
     <Container>
       <Row>
         <Col className='product-img'>
-          <img src={product?.img}/>
+          <img width={400} src={product?.img}/>
           {/* product 안에 img src가 담겨 있음! product가 있다면 img를 보여준다. */}
         </Col>
         <Col>
