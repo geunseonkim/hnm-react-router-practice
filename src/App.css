@@ -63,7 +63,44 @@
         visibility: visible;
         cursor: pointer;
     }
+    .detail-page-img {
+        width: 80vw;
+        margin-right: 7vw;
+    }
+    h4 {
+        padding-top: 20px;
+    }
+    .detail-page-explain {
+        text-align: center;
+        font-size: 14px;
+    }
+    #dropdown-basic-button {
+        width: 35vw;
+    }
+    .add-button {
+        width: 50%;
+    }
 }
+
+/* @media screen and (max-width: 430px) {
+    .detail-page-img {
+        width: 80vw;
+        margin-right: 7vw;
+    }
+    h4 {
+        padding-top: 20px;
+    }
+    .detail-page-explain {
+        text-align: center;
+        font-size: 14px;
+    }
+    #dropdown-basic-button {
+        width: 35vw;
+    }
+    .add-button {
+        width: 50%;
+    }
+} */
 .nav-area {
     display: flex;
     justify-content: space-between;

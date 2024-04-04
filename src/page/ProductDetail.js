@@ -23,10 +23,10 @@ const ProductDetail = () => {
     <Container>
       <Row>
         <Col className='product-img'>
-          <img width={400} src={product?.img}/>
+          <img className="detail-page-img" width={400} src={product?.img}/>
           {/* product 안에 img src가 담겨 있음! product가 있다면 img를 보여준다. */}
         </Col>
-        <Col>
+        <Col className="detail-page-explain">
           <h4>{product?.title}</h4>
           <h5>KRW {product?.price}</h5>
           <div style={{fontSize:"13", fontWeight:"800"}}>{product?.choice==true?"Conscious choice":""}</div>
@@ -36,7 +36,7 @@ const ProductDetail = () => {
             <Dropdown.Item href="#/action-3">L</Dropdown.Item>
             <Dropdown.Item href="#/action-3">XL</Dropdown.Item>
           </DropdownButton>
-          <Button style={{marginTop:"15px", width:"70%"}} variant="dark">추가</Button>
+          <Button style={{marginTop:"15px", width:"70%"}} className="add-button" variant="dark">추가</Button>
         </Col>
       </Row>
     </Container>
